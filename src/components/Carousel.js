@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react' 
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import { useEffect } from 'react/cjs/react.development';
 import Card from './Tile/Card';
 
 const Carousel = ({data}) => {
