@@ -3,7 +3,7 @@ import Carousel from './Carousel';
 import Week from './Week';
 
 
-const Calendar = ({months, data}) => {
+const Calendar = ({months, data, setDate}) => {
     const [modal, setModal] = useState(false)
     const [modalData, setModalData] = useState({})
 
@@ -16,7 +16,6 @@ const Calendar = ({months, data}) => {
         setModal(false);
         setModalData({});
     }
-    console.log(data)
     return (
         <>
             <div style={{visibility: !modal ? "hidden" : "" , width: "80%", margin: "auto", }} >
@@ -29,7 +28,7 @@ const Calendar = ({months, data}) => {
             </div>
 
             {!modal && <div>
-                {months.map((week, i) => <Week week={week} key={i} openModal={openModal} />)}
+                {months.map((week, i) => <Week week={week} key={i} openModal={openModal} setDate={setDate} />)}
             </div>}
         </>
     )

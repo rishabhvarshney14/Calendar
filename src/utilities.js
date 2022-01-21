@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import { useState, useEffect } from 'react';
 
 export function getMonths(startYear, endYear, data) {
     let months = [];
@@ -38,4 +39,21 @@ export function getMonths(startYear, endYear, data) {
     }
 
     return months;
+  }
+
+  export const useOnScreen = (ref) => {
+
+    const [isIntersecting, setIntersecting] = useState(false)
+  
+    const observer = new IntersectionObserver(
+      ([entry]) => setIntersecting((entry.isIntersecting))
+    )
+  
+    useEffect(() => {
+      observer.observe(ref.current)
+      // Remove the observer as soon as the component is unmounted
+      return () => { observer.disconnect() }
+    }, [])
+  
+    return isIntersecting
   }

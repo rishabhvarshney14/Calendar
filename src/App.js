@@ -8,6 +8,7 @@ import {getMonths} from './utilities'
 function App() {
   const [months, setMonths] = useState([])
   const [data, setData] = useState({})
+  const [date, setDate] = useState(dayjs())
 
   useEffect(() => {
     const fetchData = () => {
@@ -89,8 +90,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Calendar months={months} data={data} />
+      <Header date={date} />
+      <Calendar months={months} data={data} setDate={setDate} />
     </div>
   );
 }
