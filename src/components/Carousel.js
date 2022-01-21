@@ -23,6 +23,7 @@ const Carousel = ({data}) => {
     return (
         <div className='pt-2'>
         {items.length > 0 && <AliceCarousel
+                infinite={true}
                 mouseTracking
                 items={items}
                 responsive={responsive}
