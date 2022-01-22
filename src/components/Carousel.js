@@ -10,7 +10,7 @@ const Carousel = ({data, modalData}) => {
     const responsive = {
         0: { items: 1 },
         568: { items: 2 },
-        1024: { items: 4 },
+        1024: { items: 3 },
     };
 
     useEffect(() => {
@@ -19,7 +19,6 @@ const Carousel = ({data, modalData}) => {
                 if (modalData && item.id === modalData.id) {
                     setIndex(idx);
                 }
-                console.log(modalData)
                 return <Card data={item} />
             }))
             setItems(tempItems)
