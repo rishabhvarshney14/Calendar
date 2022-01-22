@@ -84,7 +84,6 @@ function App() {
     const computeMonths = () => {
       setMonths(getMonths(2015, 2025, data));
     } 
-    
     computeMonths()
   }, [data])
 

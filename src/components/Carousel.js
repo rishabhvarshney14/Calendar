@@ -9,8 +9,9 @@ const Carousel = ({data, modalData}) => {
 
     const responsive = {
         0: { items: 1 },
-        568: { items: 2 },
-        1024: { items: 3 },
+        800: { items: 2 },
+        1200: { items: 3 },
+        1500: {items: 4}
     };
 
     useEffect(() => {
@@ -36,6 +37,8 @@ const Carousel = ({data, modalData}) => {
                 items={items}
                 responsive={responsive}
                 controlsStrategy="alternate"
+                disableDotsControls
+                disableButtonsControls
             />}
         </div>
     )

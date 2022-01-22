@@ -17,16 +17,24 @@ const Types = ({types, font, size}) => {
             {types.map((type, i) => {
                 if (typesMapperBlue.hasOwnProperty(type)) {
                     return (
-                        <p className='d-inline-block' key={i} style={{fontSize: font, height: size, width: size, backgroundColor: "lightblue", borderRadius: 10}}>
+                        <div className='d-inline-block' key={i} style={{fontSize: font, height: size, width: size, backgroundColor: "lightblue", borderRadius: 10, textAlign: "center"}}>
                             {typesMapperBlue[type]}
-                        </p>
+                        </div>
+                        
                     )
                 }
-                if (typesMapperPurple.hasOwnProperty(type)) {
+                else if (typesMapperPurple.hasOwnProperty(type)) {
                     return (
-                        <p className='d-inline-block' key={i} style={{fontSize: font, height: size, width: size, backgroundColor: "#CBC3E3", borderRadius: 10}}>
+                        <div className='d-inline-block' key={i} style={{fontSize: font, height: size, width: size, backgroundColor: "#CBC3E3", borderRadius: 10, textAlign: "center"}}>
                             {typesMapperPurple[type]}
-                        </p>
+                        </div>
+                    )
+                }
+                else {
+                    return (
+                        <div className='d-inline-block' key={i} style={{fontSize: font, height: size, width: size, backgroundColor: "#CBC3E3", borderRadius: 10, textAlign: "center"}}>
+                            Ot
+                        </div>
                     )
                 }
             })}
